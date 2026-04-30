@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor – The AI Code Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect width="22" height="22" rx="5" fill="#fff"/>
+        <path d="M6 6h10v10H6z" fill="#000"/>
+        <path d="M9 9h4v4H9z" fill="#fff"/>
+      </svg>
+      <span>Cursor</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Changelog</a></li>
+      <li><a href="#">Docs</a></li>
+      <li><a href="#">Forum</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#" class="nav-link-sm">Log in</a>
+      <a href="#" class="btn-primary">Download</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">The AI Code Editor</p>
+    <h1 class="hero-title">Built to make you<br>extraordinarily productive</h1>
+    <p class="hero-desc">Cursor is the best way to code with AI. Build software faster in an editor designed for pair-programming with AI.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary btn-lg">Download for free</a>
+      <a href="#" class="btn-ghost btn-lg">Enterprise →</a>
+    </div>
+  </div>
+  <div class="hero-screenshot">
+    <div class="editor-window">
+      <div class="editor-topbar">
+        <div class="traffic-lights">
+          <span class="tl tl-r"></span>
+          <span class="tl tl-y"></span>
+          <span class="tl tl-g"></span>
+        </div>
+        <div class="editor-tabs">
+          <span class="tab active">index.ts</span>
+          <span class="tab">api.ts</span>
+          <span class="tab">utils.ts</span>
+        </div>
+      </div>
+      <div class="editor-body">
+        <div class="editor-sidebar">
+          <div class="sidebar-item active">📁 src</div>
+          <div class="sidebar-item indent">📄 index.ts</div>
+          <div class="sidebar-item indent">📄 api.ts</div>
+          <div class="sidebar-item indent">📄 utils.ts</div>
+          <div class="sidebar-item">📁 components</div>
+          <div class="sidebar-item">📁 hooks</div>
+          <div class="sidebar-item">📄 package.json</div>
+        </div>
+        <div class="editor-code">
+          <div class="code-line"><span class="ln">1</span><span class="kw">import</span> <span class="id">{ useState, useEffect }</span> <span class="kw">from</span> <span class="str">'react'</span></div>
+          <div class="code-line"><span class="ln">2</span><span class="kw">import</span> <span class="id">{ fetchData }</span> <span class="kw">from</span> <span class="str">'./api'</span></div>
+          <div class="code-line"><span class="ln">3</span></div>
+          <div class="code-line"><span class="ln">4</span><span class="kw">interface</span> <span class="type">User</span> <span class="pun">{</span></div>
+          <div class="code-line"><span class="ln">5</span>  <span class="prop">id</span><span class="pun">:</span> <span class="type">string</span></div>
+          <div class="code-line"><span class="ln">6</span>  <span class="prop">name</span><span class="pun">:</span> <span class="type">string</span></div>
+          <div class="code-line"><span class="ln">7</span>  <span class="prop">email</span><span class="pun">:</span> <span class="type">string</span></div>
+          <div class="code-line"><span class="ln">8</span><span class="pun">}</span></div>
+          <div class="code-line"><span class="ln">9</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">10</span><span class="kw">export</span> <span class="kw">function</span> <span class="fn">useUsers</span><span class="pun">()</span> <span class="pun">{</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">11</span>  <span class="kw">const</span> <span class="pun">[</span><span class="id">users</span><span class="pun">,</span> <span class="id">setUsers</span><span class="pun">]</span> <span class="pun">=</span> <span class="fn">useState</span><span class="pun">&lt;</span><span class="type">User</span><span class="pun">[]&gt;([])</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">12</span>  <span class="fn">useEffect</span><span class="pun">(() =&gt; {</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">13</span>    <span class="fn">fetchData</span><span class="pun">('/api/users').then(</span><span class="id">setUsers</span><span class="pun">)</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">14</span>  <span class="pun">}, [])</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">15</span>  <span class="kw">return</span> <span class="pun">{ </span><span class="id">users</span><span class="pun"> }</span></div>
+          <div class="code-line ai-suggestion"><span class="ln">16</span><span class="pun">}</span></div>
+        </div>
+        <div class="ai-panel">
+          <div class="ai-panel-header">
+            <span class="ai-icon">✦</span> AI Assistant
+          </div>
+          <div class="ai-msg user-msg">
+            <div class="msg-label">You</div>
+            <div class="msg-text">Create a custom hook to fetch and manage users list</div>
+          </div>
+          <div class="ai-msg ai-msg-reply">
+            <div class="msg-label">Cursor</div>
+            <div class="msg-text">Here's a <code>useUsers</code> hook that fetches users and manages state with proper TypeScript types.</div>
+          </div>
+          <div class="ai-accept-bar">
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUSTED BY ═══ -->
+<section class="trusted">
+  <p class="trusted-label">Trusted by engineers at</p>
+  <div class="logos-row">
+    <span class="logo-name">OpenAI</span>
+    <span class="logo-name">Stripe</span>
+    <span class="logo-name">Shopify</span>
+    <span class="logo-name">Vercel</span>
+    <span class="logo-name">Replicate</span>
+    <span class="logo-name">Perplexity</span>
+    <span class="logo-name">Midjourney</span>
+    <span class="logo-name">Samsung</span>
+  </div>
+</section>
+
+<!-- ═══ FEATURE SECTIONS ═══ -->
+<section class="features">
+
+  <!-- Feature 1: Tab -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <p class="feat-label">Tab</p>
+      <h2 class="feat-title">Cursor Tab</h2>
+      <p class="feat-desc">Cursor predicts your next edit and moves your cursor there with a single key. It sees your recent changes and understands what you're trying to do next.</p>
+      <ul class="feat-list">
+        <li>Suggests multi-line edits mid-thought</li>
+        <li>Understands context from recent changes</li>
+        <li>Works with any programming language</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="mini-editor">
+        <div class="mini-topbar"><span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span><span class="mini-filename">handler.ts</span></div>
+        <div class="mini-code">
+          <div class="code-line"><span class="ln">1</span><span class="kw">async function</span> <span class="fn">handleRequest</span><span class="pun">(req: Request) {</span></div>
+          <div class="code-line"><span class="ln">2</span>  <span class="kw">const</span> <span class="id">body</span> <span class="pun">=</span> <span class="kw">await</span> <span class="id">req</span><span class="pun">.</span><span class="fn">json</span><span class="pun">()</span></div>
+          <div class="code-line tab-suggest"><span class="ln">3</span>  <span class="kw">const</span> <span class="id">{ userId, action }</span> <span class="pun">= body</span> <span class="tab-ghost">⇥ Tab</span></div>
+          <div class="code-line"><span class="ln">4</span>  <span class="kw">if</span> <span class="pun">(!</span><span class="id">userId</span><span class="pun">) {</span></div>
+          <div class="code-line tab-suggest"><span class="ln">5</span>    <span class="kw">return</span> <span class="id">Response</span><span class="pun">.</span><span class="fn">json</span><span class="pun">({ error:</span> <span class="str">'Missing userId'</span> <span class="pun">}, { status: 400 })</span></div>
+          <div class="code-line"><span class="ln">6</span>  <span class="pun">}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 2: Chat (reversed) -->
+  <div class="feature-row feature-row-rev">
+    <div class="feature-text">
+      <p class="feat-label">Chat</p>
+      <h2 class="feat-title">Chat with your codebase</h2>
+      <p class="feat-desc">Cursor understands your entire project. Chat with your AI that can see your code, files, docs, and git history to give you real, contextual answers.</p>
+      <ul class="feat-list">
+        <li>References files, symbols, and docs</li>
+        <li>Understands your git history</li>
+        <li>Can run terminal commands on your behalf</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="chat-mockup">
+        <div class="mini-topbar"><span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span><span class="mini-filename">Chat</span></div>
+        <div class="chat-body">
+          <div class="chat-bubble user-bubble">Where is the authentication logic handled?</div>
+          <div class="chat-bubble ai-bubble">
+            Authentication is in <code>src/auth/middleware.ts</code>. It uses JWT tokens verified in <code>verifyToken()</code> on line 24. Sessions are stored in Redis via <code>src/lib/session.ts</code>.
+          </div>
+          <div class="chat-bubble user-bubble">Add rate limiting to the login endpoint</div>
+          <div class="chat-bubble ai-bubble">I'll add rate limiting using the existing Redis connection. Want me to apply it to <code>POST /api/auth/login</code>?</div>
+        </div>
+        <div class="chat-input-row">
+          <div class="chat-input-box">Ask anything about your codebase...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 3: Composer -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <p class="feat-label">Composer</p>
+      <h2 class="feat-title">Write code across files</h2>
+      <p class="feat-desc">Cursor can write and edit code across multiple files at once. Describe what you want in plain English and Cursor makes it happen — across your whole project.</p>
+      <ul class="feat-list">
+        <li>Edit multiple files simultaneously</li>
+        <li>Create new files from natural language</li>
+        <li>Review diffs before applying changes</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="composer-mockup">
+        <div class="mini-topbar"><span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span><span class="mini-filename">Composer</span></div>
+        <div class="composer-body">
+          <div class="composer-prompt">Add a rate limiter middleware and apply it to all /api routes</div>
+          <div class="diff-block">
+            <div class="diff-file">📄 middleware/rateLimiter.ts <span class="diff-new">+NEW</span></div>
+            <div class="diff-line add">+ import { rateLimit } from 'express-rate-limit'</div>
+            <div class="diff-line add">+ export const limiter = rateLimit({ windowMs: 60000, max: 100 })</div>
+            <div class="diff-file">📄 server.ts</div>
+            <div class="diff-line add">+ app.use('/api', limiter)</div>
+            <div class="diff-actions">
+              <button class="accept-btn">Accept All</button>
+              <button class="reject-btn">Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ FEATURE CARDS ═══ -->
+<section class="feat-cards-section">
+  <h2 class="feat-cards-title">Everything you need<br>to code faster</h2>
+  <div class="feat-cards-grid">
+    <div class="feat-card">
+      <div class="feat-card-icon">⌘</div>
+      <h3>Cmd+K</h3>
+      <p>Select code and edit it with a prompt. Cursor rewrites the selection exactly how you describe.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-icon">⊕</div>
+      <h3>Context awareness</h3>
+      <p>Cursor reads your entire codebase, docs, and web pages to give contextually accurate completions.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-icon">◎</div>
+      <h3>Privacy mode</h3>
+      <p>Enable privacy mode so none of your code is stored or used to train models — ever.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-card-icon">⟳</div>
+      <h3>BYOK</h3>
+      <p>Bring your own API key. Use GPT-4, Claude, or any other frontier model you prefer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+  <h2 class="testimonials-title">Loved by developers</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Cursor is the biggest leap in developer productivity I've seen since GitHub Copilot launched. The chat that understands my whole codebase is magical."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Arjun Kapoor</div>
+          <div class="author-role">Senior Engineer, Stripe</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"I switched from VS Code + Copilot and I'm never going back. Tab completions alone save me an hour every day. It's not even close."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">SL</div>
+        <div>
+          <div class="author-name">Sarah Liu</div>
+          <div class="author-role">Founding Engineer, Vercel</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"We moved our entire team to Cursor and velocity went up by 40%. The composer feature let us ship features we'd have taken weeks to build."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">MR</div>
+        <div>
+          <div class="author-name">Marcus Reyes</div>
+          <div class="author-role">CTO, Replicate</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"The context it builds from my codebase makes suggestions actually useful. Other tools give generic answers — Cursor gives answers about my code."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PJ</div>
+        <div>
+          <div class="author-name">Priya Jain</div>
+          <div class="author-role">Staff Engineer, Shopify</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Cmd+K is the best coding feature invented in years. Select broken code, describe the fix in English, and it just works. Every time."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">TW</div>
+        <div>
+          <div class="author-name">Tom Walsh</div>
+          <div class="author-role">Lead Dev, Linear</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">"As someone who works across 5 different repos daily, having AI that understands my whole project context without re-explaining it is priceless."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">DN</div>
+        <div>
+          <div class="author-name">Dana Nguyen</div>
+          <div class="author-role">Platform Engineer, Notion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ═══ -->
+<section class="use-cases">
+  <h2 class="use-cases-title">Built for every kind<br>of engineer</h2>
+  <div class="use-cases-grid">
+    <div class="use-case-card">
+      <div class="use-case-img uc-1">
+        <span class="uc-emoji">🚀</span>
+      </div>
+      <div class="use-case-body">
+        <h3>Startups</h3>
+        <p>Ship your MVP faster. Cursor helps small teams build with the velocity of much larger teams.</p>
+      </div>
+    </div>
+    <div class="use-case-card">
+      <div class="use-case-img uc-2">
+        <span class="uc-emoji">🏢</span>
+      </div>
+      <div class="use-case-body">
+        <h3>Enterprise</h3>
+        <p>Secure, private deployments with SOC 2 compliance and on-prem options for large engineering orgs.</p>
+      </div>
+    </div>
+    <div class="use-case-card">
+      <div class="use-case-img uc-3">
+        <span class="uc-emoji">🎓</span>
+      </div>
+      <div class="use-case-body">
+        <h3>Students</h3>
+        <p>Learn by doing. Cursor explains what the code does, helps fix bugs, and teaches as you build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHANGELOG ═══ -->
+<section class="changelog">
+  <h2 class="changelog-title">What's new</h2>
+  <div class="changelog-list">
+    <div class="changelog-item">
+      <span class="changelog-date">Apr 2026</span>
+      <div class="changelog-content">
+        <h4>Background Agent (Beta)</h4>
+        <p>Cursor can now work on tasks in the background while you continue coding. Assign it a task and it works autonomously.</p>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <span class="changelog-date">Mar 2026</span>
+      <div class="changelog-content">
+        <h4>Improved Tab completions</h4>
+        <p>Tab now suggests multi-file edits and understands recent git changes to predict your next move more accurately.</p>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <span class="changelog-date">Feb 2026</span>
+      <div class="changelog-content">
+        <h4>MCP Support</h4>
+        <p>Connect Cursor to external tools and services using the Model Context Protocol. Integrate Jira, Linear, Notion, and more.</p>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <span class="changelog-date">Jan 2026</span>
+      <div class="changelog-content">
+        <h4>claude-3-7-sonnet support</h4>
+        <p>Use Claude 3.7 Sonnet directly inside Cursor. Switch between models on any chat or composer session.</p>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <span class="changelog-date">Dec 2025</span>
+      <div class="changelog-content">
+        <h4>Notepads</h4>
+        <p>Create persistent notepads that can be referenced in any chat. Store project conventions, API patterns, and context.</p>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="changelog-more">View full changelog →</a>
+</section>
+
+<!-- ═══ TEAM / ABOUT ═══ -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-img-placeholder">
+        <div class="team-grid">
+          <div class="team-dot"></div><div class="team-dot"></div><div class="team-dot"></div>
+          <div class="team-dot"></div><div class="team-dot active"></div><div class="team-dot"></div>
+          <div class="team-dot"></div><div class="team-dot"></div><div class="team-dot"></div>
+        </div>
+        <p class="team-label">Anysphere Team</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="about-tag">About us</p>
+      <h2 class="about-title">Built by people who<br>love building</h2>
+      <p class="about-desc">Cursor is made by Anysphere, a small team of researchers and engineers obsessed with making software development faster and more joyful. We believe the best tools should feel like superpowers.</p>
+      <p class="about-desc">We raised funding from OpenAI, Andreessen Horowitz, and other investors who believe in our mission to make every developer dramatically more productive.</p>
+      <a href="#" class="btn-outline">Meet the team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <h2>Start coding smarter<br>today</h2>
+  <p>Download Cursor for free. No credit card required.</p>
+  <a href="#" class="btn-primary btn-xl">Download for free</a>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+            <rect width="22" height="22" rx="5" fill="#fff"/>
+            <path d="M6 6h10v10H6z" fill="#000"/>
+            <path d="M9 9h4v4H9z" fill="#fff"/>
+          </svg>
+          <span>Cursor</span>
+        </div>
+        <p>The AI code editor built for pair-programming with AI.</p>
+        <p class="footer-copy">© 2026 Anysphere Inc.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Cursor 101</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
